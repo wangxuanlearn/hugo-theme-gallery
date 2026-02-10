@@ -10,8 +10,8 @@ errorMsg: The photo cannot be loaded
 downloadTitle: Download
 relatedAlbums: Related albums
 photoCount:
-  one: 1 photo
-  other: "{{ . }} photos"
+  one: 1 篇内容
+  other: "{{ . }} 篇内容"
 albumCount:
-  one: "{{ .photoCount }} in {{ .count }} album"
-  other: "{{ .photoCount }} in {{ .count }} albums"
+  one: "{{ .photoCount }}  {{ .count }} 合集"
+  other: "{{ .photoCount }}  {{ .count }} 合集"

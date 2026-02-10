@@ -1,3 +1,4 @@
+{{ if ne .Params.show_gallery false }}
 <section class="gallery">
   <div id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
     {{ $images := slice }}
@@ -48,3 +49,4 @@
     {{ end }}
   </div>
 </section>
+{{ end }}

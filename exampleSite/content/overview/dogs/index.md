@@ -1,7 +1,7 @@
 ---
 date: 2023-01-12
 title: Dogs
-categories: ["animals", "nature"]
+categories: ["系史编年"]
 resources:
   - src: milli-2l0CWTpcChI-unsplash.jpg
     params:

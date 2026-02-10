@@ -1,0 +1,26 @@
+{{ $title := .Get 0 }}
+<figure class="img-row-figure" style="margin: 1.5rem 0;">
+  <div class="img-row-container" style="display: flex; gap: 10px;">
+    {{ range after 1 .Params }}
+      {{ $src := . }}
+      {{ $res := $.Page.Resources.GetMatch $src }}
+      {{ $flex := 1.0 }}
+      {{ if $res }}
+        {{ $flex = div (float $res.Width) $res.Height }}
+      {{ end }}
+      <div class="img-row-item" style="flex: {{ $flex }} 1 0%; min-width: 0;">
+        {{ if $res }}
+           <img src="{{ $res.RelPermalink }}" width="{{ $res.Width }}" height="{{ $res.Height }}" style="width: 100%; height: auto; display: block; border-radius: 4px;"> 
+        {{ else }}
+           {{/* Fallback for external or missing local images: forced height/object-fit might be needed or just let it be */}}
+           <img src="{{ $src }}" style="width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 4px;">
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+  {{ if $title }}
+    <figcaption style="text-align: center; font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted); opacity: 0.8;">
+      {{ $title }}
+    </figcaption>
+  {{ end }}
+</figure>

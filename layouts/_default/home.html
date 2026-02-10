@@ -1,6 +1,11 @@
 {{ define "main" }}
   {{ partial "title.html" . }}
-  {{ partial "categories.html" }}
+  <!-- {{ partial "categories.html" }} -->
+  {{ $headers := where (.Resources.ByType "image") "Params.cover" true }}
+  {{ if $headers }}
+    {{ $header := index $headers 0 }}
+    <img src="{{ $header.RelPermalink }}" alt="{{ .Title }}" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; margin-bottom: 2rem; border-radius: 4px;">
+  {{ end }}
   {{ partial "featured.html" . }}
   <section class="galleries">
     {{ range where .Pages "Params.private" "ne" true }}

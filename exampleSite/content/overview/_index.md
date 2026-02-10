@@ -1,9 +1,8 @@
 ---
-description: This is the "Animals" album. It has two sub-albums.
-keywords: [Animals, Photos, Cats, Dogs]
-title: Animals
+description: This is the "总体历程" album.
+keywords: [History, Overview]
+title: 总体历程
 weight: 1
-menus: "main"
 # list pages require at least one image to be displayed.
 resources:
   - src: janis-ringli-UC1pzyJFyvs-unsplash.jpg
